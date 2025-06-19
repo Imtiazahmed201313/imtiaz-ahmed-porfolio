@@ -53,10 +53,12 @@ const Hero = () => {
         <div className="flex justify-center lg:justify-end">
           <div className="relative">
             <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary to-blue-500 p-1 animate-pulse">
-              <div className="w-full h-full rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center">
-                <div className="w-72 h-72 rounded-full bg-muted flex items-center justify-center text-6xl font-bold text-primary">
-                  IA
-                </div>
+              <div className="w-full h-full rounded-full overflow-hidden">
+                <img 
+                  src="https://i.postimg.cc/rFxFPngQ/491460450-18022420961678247-816164145703776038-n.jpg"
+                  alt="Imtiaz Ahmed - FlutterFlow Developer"
+                  className="w-full h-full object-cover rounded-full"
+                />
               </div>
             </div>
             {/* Floating elements */}
