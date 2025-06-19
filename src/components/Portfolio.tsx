@@ -51,16 +51,16 @@ const Portfolio = () => {
               {/* Project Visual */}
               <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
                 {project.image ? (
-                  <div className="rounded-2xl overflow-hidden">
+                  <div className="rounded-2xl overflow-hidden h-80">
                     <img 
                       src={project.image}
                       alt={`${project.title} - ${project.subtitle}`}
-                      className="w-full h-64 object-cover"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 ) : (
-                  <div className={`bg-gradient-to-br ${project.color} p-8 rounded-2xl`}>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 h-64 flex items-center justify-center">
+                  <div className={`bg-gradient-to-br ${project.color} p-8 rounded-2xl h-80`}>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 h-full flex items-center justify-center">
                       <div className="text-center">
                         <div className="text-4xl font-bold text-white mb-2">{project.title}</div>
                         <div className="text-white/80">{project.subtitle}</div>
