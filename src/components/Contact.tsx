@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -69,8 +70,8 @@ const Contact = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "01903744117",
-      href: "tel:01903744117"
+      value: "+8801903744117",
+      href: "tel:+8801903744117"
     },
     {
       icon: Linkedin,
