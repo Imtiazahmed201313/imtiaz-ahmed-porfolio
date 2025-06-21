@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -22,10 +21,9 @@ const Contact = () => {
     setIsLoading(true);
 
     try {
-      // Replace these with your actual EmailJS credentials
-      const serviceId = 'YOUR_SERVICE_ID';
-      const templateId = 'YOUR_TEMPLATE_ID';
-      const publicKey = 'YOUR_PUBLIC_KEY';
+      const serviceId = 'service_hdv4x5l';
+      const templateId = 'template_anuaccg';
+      const publicKey = 'ntVne4AB41s688MZ7';
 
       const templateParams = {
         from_name: formData.name,
