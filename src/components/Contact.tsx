@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, Linkedin } from "lucide-react";
+import { Mail, Phone, Linkedin, Youtube } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
@@ -78,6 +78,12 @@ const Contact = () => {
       label: "LinkedIn",
       value: "linkedin.com/in/imtiaz-ahmed-3392a6275",
       href: "https://linkedin.com/in/imtiaz-ahmed-3392a6275"
+    },
+    {
+      icon: Youtube,
+      label: "YouTube",
+      value: "youtube.com/@imtiazahmedantorr",
+      href: "https://youtube.com/@imtiazahmedantorr?si=bfL78CNNn4c2pvb1"
     }
   ];
 

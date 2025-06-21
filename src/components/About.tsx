@@ -23,16 +23,9 @@ const About = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-primary">Educational Background</h3>
-                <p className="text-muted-foreground">
-                  Currently learning at ostad.app
-                </p>
-              </div>
-
-              <div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">Platforms</h3>
                 <div className="flex flex-wrap gap-3">
-                  {["Fiverr", "Upwork", "LinkedIn"].map((platform) => (
+                  {["Fiverr", "Upwork", "LinkedIn", "YouTube"].map((platform) => (
                     <span
                       key={platform}
                       className="px-4 py-2 bg-card border border-border rounded-lg text-sm"

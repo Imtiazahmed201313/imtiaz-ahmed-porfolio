@@ -1,5 +1,5 @@
 
-import { Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin, Youtube } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -14,6 +14,11 @@ const Footer = () => {
       icon: Linkedin,
       href: "https://linkedin.com/in/imtiaz-ahmed-3392a6275",
       label: "LinkedIn"
+    },
+    {
+      icon: Youtube,
+      href: "https://youtube.com/@imtiazahmedantorr?si=bfL78CNNn4c2pvb1",
+      label: "YouTube"
     }
   ];
 

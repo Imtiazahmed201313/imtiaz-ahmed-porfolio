@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, X } from "lucide-react";
 import { useState } from "react";
 import {
   AlertDialog,
@@ -15,6 +15,7 @@ import {
 
 const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [expandedImage, setExpandedImage] = useState<string | null>(null);
 
   const projects = [
     {
@@ -67,6 +68,23 @@ const Portfolio = () => {
         "https://i.postimg.cc/FHPtW0tT/Screenshot-2025-06-19-164144.png"
       ],
       video: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
+    },
+    {
+      title: "Stations World",
+      subtitle: "Join a wide range of Groups and Events",
+      description: "Stations World is a dynamic social app that lets users create and join groups, host events, and chat live with others. With real-time notifications, subscription options, and powerful tools to manage group and event members, Stations World makes building strong social connections easy and organized.",
+      features: ["Create and Join Groups", "Host Events", "Live Chat", "Subscription", "Push Notifications", "Social Integrations"],
+      color: "from-purple-500 to-pink-500",
+      image: "https://i.postimg.cc/R0XzFTvj/Navy-Blue-Modern-Business-Facebook-Cover-8.png",
+      developmentTime: "4-5 months",
+      budget: "$20,000 - $28,000",
+      projectImages: [
+        "https://i.postimg.cc/R0XzFTvj/Navy-Blue-Modern-Business-Facebook-Cover-8.png",
+        "https://i.postimg.cc/R0XzFTvj/Navy-Blue-Modern-Business-Facebook-Cover-8.png",
+        "https://i.postimg.cc/R0XzFTvj/Navy-Blue-Modern-Business-Facebook-Cover-8.png",
+        "https://i.postimg.cc/R0XzFTvj/Navy-Blue-Modern-Business-Facebook-Cover-8.png"
+      ],
+      video: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
     }
   ];
 
@@ -92,7 +110,10 @@ const Portfolio = () => {
             >
               {/* Project Visual */}
               <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
-                <div className="rounded-2xl overflow-hidden h-80">
+                <div 
+                  className="rounded-2xl overflow-hidden h-80 cursor-pointer hover:opacity-90 transition-opacity"
+                  onClick={() => setExpandedImage(project.image)}
+                >
                   <img 
                     src={project.image}
                     alt={`${project.title} - ${project.subtitle}`}
@@ -211,6 +232,29 @@ const Portfolio = () => {
             </div>
           ))}
         </div>
+
+        {/* Expanded Image Modal */}
+        {expandedImage && (
+          <div 
+            className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+            onClick={() => setExpandedImage(null)}
+          >
+            <div className="relative max-w-4xl max-h-[90vh] w-full">
+              <button
+                onClick={() => setExpandedImage(null)}
+                className="absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors"
+              >
+                <X className="h-8 w-8" />
+              </button>
+              <img 
+                src={expandedImage}
+                alt="Expanded portfolio image"
+                className="w-full h-full object-contain rounded-lg"
+                onClick={(e) => e.stopPropagation()}
+              />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
