@@ -27,12 +27,6 @@ const Portfolio = () => {
       image: "https://i.postimg.cc/0yjN0hFt/Navy-Blue-Modern-Business-Facebook-Cover-5.png",
       developmentTime: "3-4 months",
       budget: "$15,000 - $20,000",
-      projectImages: [
-        "https://i.postimg.cc/0yjN0hFt/Navy-Blue-Modern-Business-Facebook-Cover-5.png",
-        "https://i.postimg.cc/0yjN0hFt/Navy-Blue-Modern-Business-Facebook-Cover-5.png",
-        "https://i.postimg.cc/0yjN0hFt/Navy-Blue-Modern-Business-Facebook-Cover-5.png",
-        "https://i.postimg.cc/0yjN0hFt/Navy-Blue-Modern-Business-Facebook-Cover-5.png"
-      ],
       video: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
     },
     {
@@ -44,12 +38,6 @@ const Portfolio = () => {
       image: "https://i.postimg.cc/ZKc9c8Rq/Navy-Blue-Modern-Business-Facebook-Cover-6.png",
       developmentTime: "4-5 months",
       budget: "$18,000 - $25,000",
-      projectImages: [
-        "https://i.postimg.cc/ZKc9c8Rq/Navy-Blue-Modern-Business-Facebook-Cover-6.png",
-        "https://i.postimg.cc/ZKc9c8Rq/Navy-Blue-Modern-Business-Facebook-Cover-6.png",
-        "https://i.postimg.cc/ZKc9c8Rq/Navy-Blue-Modern-Business-Facebook-Cover-6.png",
-        "https://i.postimg.cc/ZKc9c8Rq/Navy-Blue-Modern-Business-Facebook-Cover-6.png"
-      ],
       video: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
     },
     {
@@ -61,13 +49,7 @@ const Portfolio = () => {
       image: "https://i.postimg.cc/FHPtW0tT/Screenshot-2025-06-19-164144.png",
       developmentTime: "2-3 months",
       budget: "$12,000 - $18,000",
-      projectImages: [
-        "https://i.postimg.cc/FHPtW0tT/Screenshot-2025-06-19-164144.png",
-        "https://i.postimg.cc/FHPtW0tT/Screenshot-2025-06-19-164144.png",
-        "https://i.postimg.cc/FHPtW0tT/Screenshot-2025-06-19-164144.png",
-        "https://i.postimg.cc/FHPtW0tT/Screenshot-2025-06-19-164144.png"
-      ],
-      video: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
+      youtubeVideo: "https://www.youtube.com/embed/Pa39sE3Ps2M"
     },
     {
       title: "Stations World",
@@ -78,12 +60,6 @@ const Portfolio = () => {
       image: "https://i.postimg.cc/R0XzFTvj/Navy-Blue-Modern-Business-Facebook-Cover-8.png",
       developmentTime: "4-5 months",
       budget: "$20,000 - $28,000",
-      projectImages: [
-        "https://i.postimg.cc/R0XzFTvj/Navy-Blue-Modern-Business-Facebook-Cover-8.png",
-        "https://i.postimg.cc/R0XzFTvj/Navy-Blue-Modern-Business-Facebook-Cover-8.png",
-        "https://i.postimg.cc/R0XzFTvj/Navy-Blue-Modern-Business-Facebook-Cover-8.png",
-        "https://i.postimg.cc/R0XzFTvj/Navy-Blue-Modern-Business-Facebook-Cover-8.png"
-      ],
       video: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
     }
   ];
@@ -167,29 +143,29 @@ const Portfolio = () => {
                     </AlertDialogHeader>
                     
                     <div className="space-y-6">
-                      {/* Project Images Grid */}
-                      <div className="grid grid-cols-2 gap-4">
-                        {project.projectImages.map((img, idx) => (
-                          <div key={idx} className="rounded-lg overflow-hidden">
-                            <img 
-                              src={img} 
-                              alt={`${project.title} screenshot ${idx + 1}`}
-                              className="w-full h-32 object-cover"
-                            />
-                          </div>
-                        ))}
-                      </div>
-
                       {/* Project Video */}
                       <div className="rounded-lg overflow-hidden">
-                        <video 
-                          controls 
-                          className="w-full h-48 object-cover"
-                          poster={project.image}
-                        >
-                          <source src={project.video} type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
+                        {project.youtubeVideo ? (
+                          <div style={{position:'relative', paddingBottom:'56.25%', height:0, overflow:'hidden'}}>
+                            <iframe 
+                              src={`${project.youtubeVideo}?autoplay=1`}
+                              frameBorder="0" 
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                              allowFullScreen 
+                              style={{position:'absolute', top:0, left:0, width:'100%', height:'100%'}}
+                            />
+                          </div>
+                        ) : (
+                          <video 
+                            controls 
+                            autoPlay
+                            className="w-full h-48 object-cover"
+                            poster={project.image}
+                          >
+                            <source src={project.video} type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
+                        )}
                       </div>
 
                       {/* Project Details */}
