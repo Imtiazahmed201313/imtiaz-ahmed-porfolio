@@ -1,13 +1,33 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play, Pause } from "lucide-react";
+import { useState, useRef } from "react";
 
 const Hero = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const toggleAudio = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+        setIsPlaying(false);
+      } else {
+        audioRef.current.play();
+        setIsPlaying(true);
+      }
+    }
+  };
+
+  const handleAudioEnd = () => {
+    setIsPlaying(false);
   };
 
   return (
@@ -61,12 +81,46 @@ const Hero = () => {
                 />
               </div>
             </div>
+            
+            {/* Audio Control Button */}
+            <button
+              onClick={toggleAudio}
+              className={`absolute top-4 right-4 w-16 h-16 rounded-full bg-primary/90 backdrop-blur-sm text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-primary ${
+                isPlaying ? 'animate-pulse' : ''
+              } glow-effect shadow-lg`}
+              aria-label={isPlaying ? "Pause introduction" : "Play introduction"}
+            >
+              {isPlaying ? (
+                <Pause className="h-6 w-6" />
+              ) : (
+                <Play className="h-6 w-6 ml-1" />
+              )}
+              
+              {/* Sound waves animation when playing */}
+              {isPlaying && (
+                <div className="absolute inset-0 rounded-full">
+                  <div className="absolute inset-0 rounded-full border-2 border-white/30 animate-ping"></div>
+                  <div className="absolute inset-0 rounded-full border border-white/20 animate-ping" style={{ animationDelay: '0.5s' }}></div>
+                </div>
+              )}
+            </button>
+
             {/* Floating elements */}
             <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-bounce"></div>
             <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-blue-500 rounded-full animate-bounce delay-300"></div>
           </div>
         </div>
       </div>
+
+      {/* Hidden Audio Element */}
+      <audio
+        ref={audioRef}
+        onEnded={handleAudioEnd}
+        preload="metadata"
+      >
+        <source src="https://voca.ro/1bWTZPD3A3X2" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
     </section>
   );
 };
