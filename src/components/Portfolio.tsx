@@ -10,6 +10,12 @@ const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
 
+  // Reorder projects to put Meetap first
+  const reorderedProjects = [
+    projects.find(p => p.title === "Meetap")!,
+    ...projects.filter(p => p.title !== "Meetap")
+  ];
+
   return (
     <section id="portfolio" className="py-20 px-4 bg-card/20">
       <div className="max-w-7xl mx-auto">
@@ -22,8 +28,8 @@ const Portfolio = () => {
           </p>
         </div>
 
-        <div className="space-y-12">
-          {projects.map((project, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {reorderedProjects.map((project, index) => (
             <AlertDialog key={project.title}>
               <ProjectCard
                 project={project}

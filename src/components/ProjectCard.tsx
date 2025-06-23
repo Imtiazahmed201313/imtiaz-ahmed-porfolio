@@ -28,57 +28,46 @@ interface ProjectCardProps {
 const ProjectCard = ({ project, index, onImageClick, onProjectSelect }: ProjectCardProps) => {
   return (
     <div
-      className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-        index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-      }`}
+      className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 hover:shadow-xl transition-all duration-300 animate-fade-in hover:-translate-y-2 group"
+      style={{ animationDelay: `${index * 0.1}s` }}
     >
-      {/* Project Visual */}
-      <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
-        <div 
-          className="rounded-2xl overflow-hidden h-80 cursor-pointer hover:opacity-90 transition-opacity"
-          onClick={() => onImageClick(project.image)}
-        >
-          <img 
-            src={project.image}
-            alt={`${project.title} - ${project.subtitle}`}
-            className="w-full h-full object-cover"
-          />
-        </div>
+      {/* Project Image */}
+      <div 
+        className="relative h-48 cursor-pointer overflow-hidden"
+        onClick={() => onImageClick(project.image)}
+      >
+        <img 
+          src={project.image}
+          alt={`${project.title} - ${project.subtitle}`}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
       {/* Project Info */}
-      <div className={`space-y-6 ${index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}`}>
+      <div className="p-6 space-y-4">
         <div>
-          <h3 className="text-3xl font-bold mb-2">{project.title}</h3>
-          <p className="text-primary text-lg">{project.subtitle}</p>
+          <h3 className="text-xl font-bold mb-1 text-foreground">{project.title}</h3>
+          <p className="text-primary text-sm font-medium">{project.subtitle}</p>
         </div>
         
-        <p className="text-muted-foreground leading-relaxed">
-          {project.description}
-        </p>
-
-        <div>
-          <h4 className="font-semibold mb-3">Key Features:</h4>
-          <div className="grid grid-cols-2 gap-2">
-            {project.features.map((feature) => (
-              <div key={feature} className="flex items-center">
-                <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                <span className="text-sm text-muted-foreground">{feature}</span>
-              </div>
-            ))}
+        <div className="flex items-center justify-between pt-2">
+          <div className="text-xs text-muted-foreground">
+            <span className="font-medium">{project.developmentTime}</span>
           </div>
+          
+          <AlertDialogTrigger asChild>
+            <Button 
+              size="sm"
+              variant="outline" 
+              className="border-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200"
+              onClick={() => onProjectSelect(project)}
+            >
+              View Details
+              <ExternalLink className="ml-1 h-3 w-3" />
+            </Button>
+          </AlertDialogTrigger>
         </div>
-
-        <AlertDialogTrigger asChild>
-          <Button 
-            variant="outline" 
-            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-            onClick={() => onProjectSelect(project)}
-          >
-            View Project
-            <ExternalLink className="ml-2 h-4 w-4" />
-          </Button>
-        </AlertDialogTrigger>
       </div>
     </div>
   );

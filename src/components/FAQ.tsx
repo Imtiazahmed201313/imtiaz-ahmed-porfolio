@@ -19,6 +19,10 @@ const FAQ = () => {
       answer: "Absolutely. I have strong experience in integrating Firebase for authentication, Firestore databases, storage, notifications, and more."
     },
     {
+      question: "Are you familiar with Flutter and custom coding in Dart?",
+      answer: "Yes, I have experience with Flutter and writing custom Dart code. This gives me a strong technical edge when building apps in FlutterFlow."
+    },
+    {
       question: "How do I get started with you?",
       answer: "Just head over to the Contact section and reach out via email, LinkedIn, or the contact form. I'll get back to you quickly to discuss your project needs and next steps."
     }
