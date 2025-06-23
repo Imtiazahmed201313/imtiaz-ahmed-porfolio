@@ -20,8 +20,8 @@ export const projects: Project[] = [
     features: ["Car Bidding System", "Location Search", "Real-time Chat", "Advanced Filters"],
     color: "from-red-500 to-orange-500",
     image: "https://i.postimg.cc/0yjN0hFt/Navy-Blue-Modern-Business-Facebook-Cover-5.png",
-    developmentTime: "3-4 months",
-    budget: "$15,000 - $20,000",
+    developmentTime: "2-3 months",
+    budget: "$2,000 - $3,000",
     video: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
   },
   {
@@ -31,8 +31,8 @@ export const projects: Project[] = [
     features: ["Business Listings", "Event Management", "Community Features", "Real-time Messaging"],
     color: "from-green-500 to-teal-500",
     image: "https://i.postimg.cc/ZKc9c8Rq/Navy-Blue-Modern-Business-Facebook-Cover-6.png",
-    developmentTime: "4-5 months",
-    budget: "$18,000 - $25,000",
+    developmentTime: "2-3 months",
+    budget: "$3,500 - $4,000",
     video: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
   },
   {
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     color: "from-blue-500 to-purple-500",
     image: "https://i.postimg.cc/FHPtW0tT/Screenshot-2025-06-19-164144.png",
     developmentTime: "2-3 months",
-    budget: "$12,000 - $18,000",
+    budget: "For my startup",
     youtubeVideo: "https://www.youtube.com/embed/Pa39sE3Ps2M"
   },
   {
@@ -53,8 +53,8 @@ export const projects: Project[] = [
     features: ["Create and Join Groups", "Host Events", "Live Chat", "Subscription", "Push Notifications", "Social Integrations"],
     color: "from-purple-500 to-pink-500",
     image: "https://i.postimg.cc/R0XzFTvj/Navy-Blue-Modern-Business-Facebook-Cover-8.png",
-    developmentTime: "4-5 months",
-    budget: "$20,000 - $28,000",
+    developmentTime: "2-3 months",
+    budget: "$3,000 - $4,000",
     video: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
   }
 ];
