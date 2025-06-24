@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, Linkedin, Youtube } from "lucide-react";
+import { Mail, MessageCircle, Linkedin, Youtube } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
@@ -68,10 +68,10 @@ const Contact = () => {
       href: "mailto:imtiazahmed201313@gmail.com"
     },
     {
-      icon: Phone,
-      label: "Phone",
+      icon: MessageCircle,
+      label: "WhatsApp",
       value: "+8801903744117",
-      href: "tel:+8801903744117"
+      href: "https://wa.me/8801903744117"
     },
     {
       icon: Linkedin,
