@@ -1,6 +1,26 @@
 
+import { Mail, Linkedin, Youtube } from "lucide-react";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  const socialLinks = [
+    {
+      icon: Mail,
+      href: "mailto:imtiazahmed201313@gmail.com",
+      label: "Email"
+    },
+    {
+      icon: Linkedin,
+      href: "https://linkedin.com/in/imtiaz-ahmed-3392a6275",
+      label: "LinkedIn"
+    },
+    {
+      icon: Youtube,
+      href: "https://youtube.com/@imtiazahmedantorr?si=bfL78CNNn4c2pvb1",
+      label: "YouTube"
+    }
+  ];
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -13,6 +33,22 @@ const Footer = () => {
           {/* Logo/Name */}
           <div className="text-2xl font-bold gradient-text">
             Imtiaz Ahmed
+          </div>
+
+          {/* Social Links */}
+          <div className="flex space-x-6">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label={link.label}
+              >
+                <link.icon className="h-6 w-6" />
+              </a>
+            ))}
           </div>
 
           {/* Scroll to Top Button */}

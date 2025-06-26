@@ -21,6 +21,20 @@ const About = () => {
                   I have developed 10+ mobile apps with the help of FlutterFlow. I hold Level 2 Seller status on Fiverr.
                 </p>
               </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-2 text-primary">Platforms</h3>
+                <div className="flex flex-wrap gap-3">
+                  {["Fiverr", "Upwork", "LinkedIn", "YouTube"].map((platform) => (
+                    <span
+                      key={platform}
+                      className="px-4 py-2 bg-card border border-border rounded-lg text-sm"
+                    >
+                      {platform}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
