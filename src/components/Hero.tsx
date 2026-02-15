@@ -76,7 +76,7 @@ const Hero = () => {
             <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary to-blue-500 p-1 animate-pulse">
               <div className="w-full h-full rounded-full overflow-hidden">
                 <img 
-                  src={profilePhoto}
+                  src="https://i.postimg.cc/kgNFDVHb/IMG-20260108-162740-1-removebg-preview.png"
                   alt="Imtiaz Ahmed - FlutterFlow Developer"
                   className="w-full h-full object-cover rounded-full"
                 />
