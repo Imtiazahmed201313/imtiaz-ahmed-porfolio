@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Pause } from "lucide-react";
 import { useState, useRef } from "react";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const Hero = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -75,7 +76,7 @@ const Hero = () => {
             <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary to-blue-500 p-1 animate-pulse">
               <div className="w-full h-full rounded-full overflow-hidden">
                 <img 
-                  src="https://i.postimg.cc/rFxFPngQ/491460450-18022420961678247-816164145703776038-n.jpg"
+                  src={profilePhoto}
                   alt="Imtiaz Ahmed - FlutterFlow Developer"
                   className="w-full h-full object-cover rounded-full"
                 />
