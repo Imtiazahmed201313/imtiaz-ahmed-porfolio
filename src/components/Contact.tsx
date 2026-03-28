@@ -22,7 +22,7 @@ const Contact = () => {
     setIsLoading(true);
 
     try {
-      const serviceId = 'service_hdv4x5l';
+      const serviceId = 'service_5i238kk';
       const templateId = 'template_anuaccg';
       const publicKey = 'ntVne4AB41s688MZ7';
 
