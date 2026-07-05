@@ -10,6 +10,8 @@ export interface Project {
   budget: string;
   video?: string;
   youtubeVideo?: string;
+  livePreview?: string;
+  playStore?: string;
 }
 
 export const projects: Project[] = [
@@ -44,7 +46,8 @@ export const projects: Project[] = [
     image: "https://i.postimg.cc/FHPtW0tT/Screenshot-2025-06-19-164144.png",
     developmentTime: "4-5 weeks",
     budget: "For my startup",
-    youtubeVideo: "https://www.youtube.com/embed/Pa39sE3Ps2M"
+    youtubeVideo: "https://www.youtube.com/embed/Pa39sE3Ps2M",
+    playStore: "https://play.google.com/store/apps/details?id=com.meetap.app"
   },
   {
     title: "Fiind App",
@@ -67,5 +70,26 @@ export const projects: Project[] = [
     developmentTime: "2-3 weeks",
     budget: "$3,000 - $4,000",
     video: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
+  },
+  {
+    title: "Real Estate",
+    subtitle: "Modern Real Estate App with Buyer & Seller Flow",
+    description: "Designed and delivered a production-ready Real Estate App using FlutterFlow (no-code), tailored for agent-based property marketplaces and lead-driven platforms. The project includes complete user flows for buyers, agents, admins with subscriptions, built around real-world real estate operations.",
+    features: [
+      "Property Listing and Search",
+      "Buyer Property Requirements (Lead Generation)",
+      "Agent Dashboards",
+      "In-app Chat and Calls",
+      "Property Visit Scheduling",
+      "Ratings and Reviews",
+      "Notifications",
+      "Subscription-based Access to Leads"
+    ],
+    color: "from-emerald-500 to-teal-500",
+    image: "https://i.postimg.cc/Y2gpDLP7/Navy-Blue-Modern-Business-Facebook-Cover-16.png",
+    developmentTime: "4 weeks",
+    budget: "Around $1,000",
+    video: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4",
+    livePreview: "https://app.flutterflow.io/run/06G3NHecHoCsswvrrpQI"
   }
 ];
