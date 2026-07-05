@@ -7,6 +7,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Play } from "lucide-react";
 
 interface Project {
   title: string;
@@ -19,6 +21,8 @@ interface Project {
   budget: string;
   video?: string;
   youtubeVideo?: string;
+  livePreview?: string;
+  playStore?: string;
 }
 
 interface ProjectModalProps {
@@ -93,6 +97,42 @@ const ProjectModal = ({ project }: ProjectModalProps) => {
           </div>
         </div>
       </div>
+
+      {(project.livePreview || project.playStore) && (
+        <div className="flex flex-wrap gap-3 pt-2">
+          {project.livePreview && (
+            <Button
+              asChild
+              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+            >
+              <a
+                href={project.livePreview}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Live Preview
+              </a>
+            </Button>
+          )}
+          {project.playStore && (
+            <Button
+              asChild
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+            >
+              <a
+                href={project.playStore}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Play className="mr-2 h-4 w-4" />
+                Get it on Play Store
+              </a>
+            </Button>
+          )}
+        </div>
+      )}
 
       <AlertDialogFooter>
         <AlertDialogAction>Close</AlertDialogAction>
