@@ -28,7 +28,7 @@ const Portfolio = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex flex-col gap-10 md:gap-16">
           {reorderedProjects.map((project, index) => (
             <AlertDialog key={project.title}>
               <ProjectCard
@@ -43,6 +43,7 @@ const Portfolio = () => {
             </AlertDialog>
           ))}
         </div>
+
 
         <ImageModal 
           imageUrl={expandedImage}
